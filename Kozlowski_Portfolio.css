@@ -34,6 +34,14 @@ body {
     padding: 15px;
 }
 
+.row::first-child {
+    padding-left: 0;
+}
+
+.row::last-child {
+    padding-right: 0;
+}
+
 .row::after {
     content: "";
     clear: both;
@@ -43,6 +51,10 @@ body {
 main {
     clear: both;
     margin: auto;
+}
+
+div {
+    padding: 0;
 }
 
 /*********** Header Styling ****************/
@@ -154,6 +166,13 @@ span.text_4 {
     color: #FFCECE;
 }
 
+.text_1::after {
+    content: "|";
+    position: absolute;
+    display: inline;
+    margin: 0px .35em;
+}
+
 body.home {
     background-color: #353535;
     color: #FFFFFF; 
@@ -167,6 +186,23 @@ body.home {
     font-size: 1vw;
 }
 
+.downArrow {
+    border: solid #FFFFFF;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.downArrow:hover {
+    border-color: #F73959;
+}
+
+.downArrow:active {
+    border-color: #7AC7C3;
+}
+
 /******************** Text/Font Styling *********************/
 
 .page-title {
@@ -174,15 +210,30 @@ body.home {
     font-weight: 300;
 }
 
-.title-subtext {
+.page-title::after {
+    content: "|";
+    position: absolute;
+    display: inline;
+    margin: 0px .35em;
+}
+
+#title-subtext-resume {
     margin: 7.8vw 0;
+}
+
+#title-subtext-work {
+    margin: 7vw 0;
+}
+
+.page-title-other {
+    font-size: 7.75vw;
+    font-weight: 300;
 }
 
 h3 {
     font-size: 2.5vw;
     font-weight: 500;
-    padding: 0;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 h5 {
@@ -218,46 +269,44 @@ h6 {
 p {
     font-weight: 400;
     font-size: 1.4vw;
+    line-height: 1.4;
 }
 
 .profile-image {
-    height: 400px;
+    height: 40vw;
     border-radius: 12px;
     background-color: #353535;
+    margin-right: 5vw;
+    width: 35%;
+}
+
+#aboutText {
+    padding-top: 0;
 }
 
 .button {
-    padding-top: .35vw;
-    text-align: center;
     background-color: #7AC7C3;
-    border-radius: 10px;
-    width: 130px;
-    height: 50px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.button p {
+    border: 2px solid #FFFFFF;
+    color: #000000;
+    padding: 1.5vw;
+    text-align: center;
+    text-decoration: none;
+    display: block;
     font-size: 1vw;
-    margin: 20px;   
+    border-radius: 10px;
+    margin: 2vw auto;
+    transition-duration: 0.4s;
+    width: 30%;
 }
 
-.downArrow {
-    border: solid #FFFFFF;
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 10px;
-    transform: rotate(45deg);
-    z-index: -1;
+input.button {
+    margin-right: 7vw;
+    width: 10vw;
 }
 
-.downArrow:hover {
-    border-color: #F73959;
-}
-
-.downArrow:active {
-    border-color: #7AC7C3;
+.button:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #7AC7C3;
 }
 
 .footer {
@@ -268,4 +317,104 @@ div.button p {
 
 .footer p {
     font-size: .75vw;
+}
+
+/************* Contact Page Styling ****************/
+
+#contact-email-icon {
+    background-image: url(Images/mail-icon.svg);
+    background-repeat: no-repeat;
+    width: 7.5vw;
+    height: 5.5vw;
+    margin: 2vw auto;
+}
+
+#contact-phone-icon {
+    background-image: url(Images/phone-icon.svg);
+    background-repeat: no-repeat;
+    width: 7.5vw;
+    height: 5.5vw;
+    margin: 2vw auto;
+}
+
+#contact-location-icon {
+    background-image: url(Images/location-icon.svg);
+    background-repeat: no-repeat;
+    width: 7.5vw;
+    height: 5.5vw;
+    margin: 2vw auto 1vw;
+}
+.contact-card {
+    text-align: center;
+}
+
+form {
+    margin: 15px 0;
+}
+
+#form-email {
+    background-color: rgba(35, 35, 35, 10%);
+    height: 3vw;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 1vw 0;
+    width: 40.5vw;
+    border: 0px;
+    color: rgba(35, 35, 35, 60%);
+    font-size: 1.25vw;
+}
+
+#form-message {
+    background-color: rgba(35, 35, 35, 10%);
+    height: 150px;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 1vw 0;
+    border: 0px;
+    color: rgba(35, 35, 35, 60%);
+    font-size: 1.25vw;
+}
+
+#form-first {
+    background-color: rgba(35, 35, 35, 10%);
+    height: 3vw;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 1vw 1vw 1vw 0;
+    border: 0px;
+    color: rgba(35, 35, 35, 60%);
+    font-size: 1.25vw;
+}
+
+#form-last {
+    background-color: rgba(35, 35, 35, 10%);
+    height: 3vw;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 1vw 1vw;
+    border: 0px;
+    color: rgba(35, 35, 35, 60%);
+    font-size: 1.25vw;
+}
+
+.work-card {
+    background-color: #353535;
+    height: 25vw;
+    border-radius: 5px;
+    text-align: center;
+    width: 35vw;
+    margin: 10px;
+    color: #353535;
+}
+
+.work-card:hover {
+    background-color: rgba(35, 35, 35, 60%);
+}
+
+.center {
+    margin: auto;
+}
+
+.resumeHeader {
+    height: 4vw;
 }

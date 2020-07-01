@@ -28,28 +28,37 @@
     
 <main class="col-10">
     <div class="row">
-    <h1 class="page-title">let's chat.</h1>  
+        <h1 class="page-title-other">let's chat.</h1>  
     </div>
-    <div class="content">
-        <div class="contact-card">
+    <div class="content row">
+        <div class="contact-card col-4">
             <div id="contact-email-icon"></div>
-            <div><p><a href="mailto:kozlowaa@mail.uc.edu">kozlowaa@mail.uc.edu</a></p></div>
+            <p><a class="click" href="mailto:kozlowaa@mail.uc.edu">kozlowaa@mail.uc.edu</a></p>
         </div>
-        <div class="contact-card">
-            <div id="contact-email-icon"></div>
-            <div><p>+1(410)-409-0041</p></div>
+        <div class="contact-card col-4">
+            <div id="contact-phone-icon"></div>
+            <p>+1(410)-409-0041</p>
         </div>
-        <div class="contact-card">
-            <div id="contact-email-icon"></div>
-            <div><p>Columbus, Ohio</p></div>
+        <div class="contact-card col-4">
+            <div id="contact-location-icon"></div>
+            <p>Columbus, Ohio</p>
         </div>
     </div>
     <div class="form">
-    <h3>Got a question?</h3>
-    <div><p>First Name</p></div><div><p>Last Name</p></div>
-    <div id="form-email"><p>E-mail</p></div>
-    <div id="form-message"><p>What's on your mind?</p></div>
-    <div class="button">let's get in touch</div>
+        <h3>Got a question?</h3>
+    <form> 
+    <div class="row">
+        <input type="text" id="form-first" class="col-3" name="fname" value="First Name">
+        <input type="text" id="form-last" class="col-3" name="lname" value="Last Name">
+    </div>
+    <div class="row">
+        <input type="text" id="form-email" class="col-6" name="email" value="E-mail">
+    </div>
+    <div class="row">
+        <textarea rows="10" id="form-message" class="col-11" name="message">What's on your mind?</textarea>
+    </div>
+    <input type="button" class="button" href="mailto:kozlowaa@mail.uc.edu" value="submit">
+    </form>
     </div>
 </main>
     
