@@ -34,11 +34,11 @@ body {
     padding: 15px;
 }
 
-.row::first-child {
+.row:first-child {
     padding-left: 0;
 }
 
-.row::last-child {
+.row:last-child {
     padding-right: 0;
 }
 
@@ -134,6 +134,19 @@ a.navDark:active, a.click:active, a.navWhite:active{
     color: #7AC7C3;
 }
 
+a.company:link, a.company:visited {
+    color: #F73959;
+    text-decoration: none;
+}
+
+a.company:hover {
+    color: #F73959;
+    text-decoration: underline;
+}
+
+a.company:active {
+    color: #7AC7C3;
+}
 
 /************* Home Page Styling ******************/
 
@@ -145,32 +158,80 @@ a.navDark:active, a.click:active, a.navWhite:active{
 }
 
 #home-div {
-    margin-top: 6em;
+    margin-top: 7em;
 }
 
-span.text_1 {
+.text_1, .text_2, .text_3 {
     font-size: 8vw;
     font-weight: 500;
     color: #FFCECE;
-}
-span.text_2 {
-    display: none;
-    color: #FFCECE;
-}
-span.text_3 {
-    display: none;
-    color: #FFCECE;
-}
-span.text_4 {
-    display: none;
-    color: #FFCECE;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    animation-timing-function: steps(18, end);
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
 }
 
-.text_1::after {
+.text_1 {
+    animation-name: text1;
+}
+
+.text_2 {
+    animation-name: text2;
+    left: -5px;
+}
+
+.text_3 {
+    animation-name: text3;
+    left: -18px;
+}
+
+.text_1::after, .text_2::after, .text_3::after{
     content: "|";
     position: absolute;
-    display: inline;
-    margin: 0px .35em;
+    right: -10px;
+    animation-name: caret;
+    animation-duration: .75s;
+    animation-timing-function: steps(1, end);
+    animation-iteration-count: infinite;
+}
+
+@keyframes text1 {
+    0%, 33%, 66%, 100% {
+        width: 0;
+    }
+    10%, 22% {
+        width: 9.2em;
+    }
+}
+
+@keyframes text2 {
+    0%, 33%, 66%, 100% {
+        width: 0;
+    }
+    43%, 55% {
+        width: 10em;
+    }
+}
+
+@keyframes text3 {
+    0%, 33%, 66%, 100% {
+        width: 0;
+    }
+    76%, 88% {
+        width: 9.05em;
+    }
+}
+
+@keyframes caret {
+    0%, 100% {
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
 }
 
 body.home {
@@ -244,18 +305,34 @@ h5 {
     margin: 3px 0;
 }
 
-li.resume {
+th {
+    color: #F73859;
+    font-size: 2vw;
+    font-weight: 600;
+    padding: 0;
+    margin: 3px 0;
+    text-align: left;
+}
+
+td.resume {
     font-weight: 400;
     font-size: 1.4vw;
     list-style-type: none;
     text-align: left;
     margin: 0;
     line-height: 1.55;
+    padding: 0 70px 0 0;
 }
 
-ul {
-    margin: 3px 0 0 0;
-    padding-left: 0;
+caption {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: left;
+}
+
+table {
+    margin: 0 90px 30px;
 }
 
 h6 {
@@ -272,12 +349,15 @@ p {
     line-height: 1.4;
 }
 
-.profile-image {
+div.profile-image {
     height: 40vw;
     border-radius: 12px;
     background-color: #353535;
     margin-right: 5vw;
     width: 35%;
+    background-image: url(Images/IMG_4473.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #aboutText {
@@ -319,6 +399,14 @@ input.button {
     font-size: .75vw;
 }
 
+.center {
+    margin: auto;
+}
+
+.resumeHeader {
+    height: 4vw;
+}
+
 /************* Contact Page Styling ****************/
 
 #contact-email-icon {
@@ -352,19 +440,7 @@ form {
     margin: 15px 0;
 }
 
-#form-email {
-    background-color: rgba(35, 35, 35, 10%);
-    height: 3vw;
-    border-radius: 2px;
-    padding: 5px;
-    margin: 1vw 0;
-    width: 40.5vw;
-    border: 0px;
-    color: rgba(35, 35, 35, 60%);
-    font-size: 1.25vw;
-}
-
-#form-message {
+#message {
     background-color: rgba(35, 35, 35, 10%);
     height: 150px;
     border-radius: 2px;
@@ -373,9 +449,11 @@ form {
     border: 0px;
     color: rgba(35, 35, 35, 60%);
     font-size: 1.25vw;
+    resize: vertical;
+    max-height: 500px;
 }
 
-#form-first {
+#fname, #lname, #email {
     background-color: rgba(35, 35, 35, 10%);
     height: 3vw;
     border-radius: 2px;
@@ -386,35 +464,65 @@ form {
     font-size: 1.25vw;
 }
 
-#form-last {
-    background-color: rgba(35, 35, 35, 10%);
-    height: 3vw;
-    border-radius: 2px;
-    padding: 5px;
-    margin: 1vw 1vw;
-    border: 0px;
-    color: rgba(35, 35, 35, 60%);
-    font-size: 1.25vw;
+label {
+    display: none;
+}
+
+/************* Work Page Styling ****************/
+
+#hom {
+    background-image: url(Images/hom/_MG_7057.JPG);
+    background-repeat: none;
+    background-size: cover;
+}
+
+#aaro {
+    background-image: url(Images/aaro/DSC_0809-edit.jpg);
+    background-repeat: none;
+    background-size: cover;
+}
+
+#national {
+    background-image: url(Images/national/portfolio_rd5_draft261.jpg);
+    background-repeat: none;
+    background-size: cover;
 }
 
 .work-card {
-    background-color: #353535;
+    position: relative;
     height: 25vw;
     border-radius: 5px;
     text-align: center;
     width: 35vw;
     margin: 10px;
-    color: #353535;
+    color: rgba(255, 255, 255, 0%);
+    font-weight: 600;
 }
 
-.work-card:hover {
-    background-color: rgba(35, 35, 35, 60%);
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-.center {
-    margin: auto;
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1));
 }
 
-.resumeHeader {
-    height: 4vw;
+.work-card:hover .overlay {
+    opacity: 1;
+}
+
+.work-card-text {
+    color: #FFFFFF;
+    font-weight: 600;
 }
