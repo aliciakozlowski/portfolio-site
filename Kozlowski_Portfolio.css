@@ -148,6 +148,15 @@ a.company:active {
     color: #7AC7C3;
 }
 
+a.overlay:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.overlay:visited {
+    text-decoration: none;
+}
+
 /************* Home Page Styling ******************/
 
 #home-text {
@@ -291,13 +300,13 @@ body.home {
     font-weight: 300;
 }
 
-h3 {
+h2 {
     font-size: 2.5vw;
     font-weight: 500;
     margin: 2vw 0;
 }
 
-h5 {
+h3 {
     color: #F73859;
     font-size: 2vw;
     font-weight: 600;
@@ -335,7 +344,7 @@ table {
     margin: 0 9.25vw 6vw;
 }
 
-h6 {
+h4 {
     font-size: 1.5vw;
     font-weight: 400;
     color: #646464;
@@ -524,6 +533,31 @@ label {
     opacity: 1;
 }
 
+.full-bleed {
+    width: 100%;
+}
+
+.introduction {
+    margin-bottom: 3vw;
+}
+
+figure {
+    position: relative;
+    height: 30vw;
+    overflow: hidden;
+    margin: 3.83vw;
+}
+
+.pro-esports {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: 100%;
+    left: -15vw;
+    top:0;
+}
+
+
 /************* Mobile Styling ****************/
 
 @media only screen and (max-width: 37.5em) {
@@ -607,15 +641,15 @@ label {
         margin: 0;
     }
     
-    h3 {
+    h2 {
         font-size: 4vw;
     }
 
-    h5 {
+    h3 {
         font-size: 3vw;
     }
     
-    h6 {
+    h4 {
         font-size: 2vw;
         margin: 0 0 10px 0;
     }
