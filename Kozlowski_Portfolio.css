@@ -557,7 +557,37 @@ figure {
     top:0;
 }
 
+.video-wrapper {
+    width: 95%;
+    max-width: 1200px;
+    margin: 3vw auto;
+    position: relative;
+}
+.video-container {
+    height: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+}
 
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.video-caption {
+    width: 80%;
+    margin: auto;
+}
+
+.portfolio {
+    margin-bottom: 6vw;
+}
 /************* Mobile Styling ****************/
 
 @media only screen and (max-width: 37.5em) {
